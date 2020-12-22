@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Ajout de l'article :</h1>
+    <form method="post">
+        <label>Titre
+            <input type="text" name="Titre">
+        </label>
+        <label>Description
+        <textarea name="Description"></textarea>
+        </label>
+        <label>Date
+            <input name="DateAjout" id="DateAjout" type="date" readonly>
+        </label>
+        <label>Auteur
+            <select name="Auteur">
+                <option >Rebecca</option>
+                <option >Alexandre</option>
+                <option >Emilie</option>
+                <option>Léo</option>
+                <option >Aegir</option>
+            </select>
+        </label>
+        <label for="categorie">Catégorie
+            <select name="categorie" id="categorie">
+                {% for categorie in categories %}
+                    <option value="{{categorie.id}}">{{categorie.libelle}}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <input type="submit" value="Enregistrer les modifications">
+    </form>
+
+{% endblock %}
+
+{% block javascript %}
+        var today = new Date();
+
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+        dd = '0'+dd
+        }
+
+        if(mm<10) {
+        mm = '0'+mm
+        }
+
+        // today = yyyy + '/' + mm + '/' + dd;
+        today = yyyy + '-' + mm + '-' + dd;
+
+        console.log(today);
+        document.getElementById('DateAjout').value = today;
+{% endblock %}

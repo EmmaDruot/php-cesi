@@ -1,0 +1,10 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "swiftmailer/swiftmailer": "^6.2",
+      "ext-pdo": "*",
+      "ext-json": "*",
+        "doctrine/annotations": "^1.11",
+        "symfony/routing": "3.4"
+    }
+}

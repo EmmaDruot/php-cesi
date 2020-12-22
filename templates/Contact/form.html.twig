@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Formulaire de contact :</h1>
+    <form method="post">
+        <input type="email" name="email">
+        <input type="text" name="Objet">
+        <textarea name="Description">
+        </textarea>
+        <input type="submit" value="Envoyer le mail">
+    </form>
+
+{% endblock %}

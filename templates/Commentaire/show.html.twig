@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Détail de la catégorie</h1>
+    <p>{{ commentaire.texte }}</p>
+    <p>{{ commentaire.auteur }}</p>
+    <p>{{ commentaire.mail }}</p>
+    <p>{{ commentaire.date|date('d/m/Y') }}</p>
+    <p><a href="/commentaire/update/{{ commentaire.id }}"> Modifier cette super Categorie </a></p>
+    <p><a href="/commentaire/delete/{{ commentaire.id }}"> Supprimer cette super Catégorie </a></p>
+    
+{% endblock %}

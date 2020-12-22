@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Modification de l'article "{{ article.Titre }}"</h1>
+    <form method="post">
+        <label>Titre
+            <input type="text" name="Titre" value="{{ article.Titre }}">
+        </label>
+        <label>Description
+            <textarea name="Description">
+                {{ article.Description }}
+            </textarea>
+        </label>
+        <label>Date d'ajout
+            <input type="date" name="DateAjout" readonly value="{{ article.DateAjout }}">
+        </label>
+        <label>Auteur
+            <select name="Auteur">
+                {% if article.Auteur == "Rebecca" %}
+                    <option selected>Rebecca</option>
+                {% else %}
+                    <option >Rebecca</option>
+                {% endif %}
+
+                {% if article.Auteur == "Alexandre" %}
+                    <option selected>Alexandre</option>
+                {% else %}
+                    <option >Alexandre</option>
+                {% endif %}
+
+                {% if article.Auteur == "Emilie" %}
+                    <option selected>Emilie</option>
+                {% else %}
+                    <option >Emilie</option>
+                {% endif %}
+
+                {% if article.Auteur == "Léo" %}
+                    <option selected>Léo</option>
+                {% else %}
+                    <option >Léo</option>
+                {% endif %}
+
+                {% if article.Auteur == "Aegir" %}
+                    <option selected>Aegir</option>
+                {% else %}
+                    <option >Aegir</option>
+                {% endif %}
+
+            </select>
+        </label>
+        <input type="submit" value="Enregistrer les modifications">
+    </form>
+
+{% endblock %}

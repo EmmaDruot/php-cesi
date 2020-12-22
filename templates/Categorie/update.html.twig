@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Modification de la catégorie "{{ categorie.libelle }}"</h1>
+    <form method="post">
+        <input type="text" name="libelle" value="{{ categorie.libelle }}">
+        <input type="text" name="icon" value="{{ categorie.icon }}">
+        
+    
+        <input type="submit" value="Enregistrer les modifications">
+    </form>
+
+{% endblock %}

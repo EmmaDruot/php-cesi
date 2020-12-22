@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <h1>Modification du commentaire "{{ commentaire.texte }}"</h1>
+    <form method="post">
+        <input type="text" name="texte" value="{{ commentaire.texte }}">
+        <input type="text" name="auteur" value="{{ categorie.auteur }}">
+        <input type="email" name="mail" value="{{ categorie.mail }}">
+        
+    
+        <input type="submit" value="Enregistrer les modifications">
+    </form>
+
+{% endblock %}
